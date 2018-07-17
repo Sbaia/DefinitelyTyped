@@ -25,6 +25,13 @@ export interface Connection {
     createHubProxy(hubName: string): Proxy;
 
     start(options?: any, callback?: any): any;
+    starting(callback: () => void): Connection;
+    received(callback: () => void): Connection;
+    connectionSlow(callback: () => void): Connection;
+    reconnecting(callback: () => void): Connection;
+    reconnected(callback: () => void): Connection;
+    stateChanged(callback: () => void): Connection;
+    disconnected(callback: () => void): Connection;
 }
 
 export interface Proxy {
